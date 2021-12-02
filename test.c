@@ -71,7 +71,8 @@ int main(const int argc, const char * const * argv)
   exit(-1);
 }
 
-bool testTwoSum(void) {
+bool testTwoSum(void)
+{
   const int target = 9;
   int nums[] = { 2, 7, 11, 15 };
   int returnSize = 0;
