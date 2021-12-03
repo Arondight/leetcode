@@ -2,21 +2,12 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "test.h"
 
-#define OK        ((puts("OK"), true))
-#define FAILED    ((puts("FAILED"), false))
-#define ASSERT(e) ((printf(("ASSERT (" #e ") ... ")), ((e) ? OK : FAILED)))
+extern const mapping_t tests[];
+extern size_t testsSize;
 
-typedef struct mapping {
-  int number;
-  bool (*callback)();
-} mapping_t;
-
-extern int * twoSum(int * nums, int numsSize, int target, int * returnSize);
-
-bool testTwoSum(void);
-
-int usage(void)
+static int usage(void)
 {
   const char * const text[] = {
     "Options:",
@@ -42,12 +33,9 @@ int main(const int argc, const char * const * argv)
     { "help", no_argument, 0, 'h' },
     { 0, 0, 0, 0 }
   };
-  const mapping_t maps[] = {
-    { 1, testTwoSum },
-  };
 
   if (argc < 2) {
-    exit(usage());
+    return usage();
   }
 
   while (-1 != (opt = getopt_long(argc, (char * const *)argv, optstr, opts, NULL))) {
@@ -57,28 +45,16 @@ int main(const int argc, const char * const * argv)
         break;
       case 'h':
       default:
-        exit(usage());
+        return usage();
     }
   }
 
-  for (size_t i = 0; i < sizeof(maps) / sizeof(mapping_t); ++i) {
-    if (number == maps[i].number) {
-      exit(!(*(maps[i].callback))());
+  for (size_t i = 0; i < testsSize; ++i) {
+    if (number == tests[i].number) {
+      return !(*(tests[i].callback))();
     }
   }
 
   printf("Unknown problem number %d.\n", number);
-  exit(-1);
-}
-
-bool testTwoSum(void)
-{
-  const int target = 9;
-  int nums[] = { 2, 7, 11, 15 };
-  int returnSize = 0;
-  const int * const result = twoSum(nums, sizeof(nums) / sizeof(int), target, &returnSize);
-
-  return ASSERT(NULL != result) &&
-         ASSERT(2 == returnSize) &&
-         ASSERT(0 == result[0] && 1 == result[1]);
+  return -1;
 }
