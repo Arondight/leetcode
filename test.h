@@ -9,5 +9,6 @@ typedef struct mapping {
 } mapping_t;
 
 extern bool testTwoSum(void);
+extern bool testMergeTwoLists(void);
 
 #endif /* __TEST_H__ */
