@@ -16,7 +16,7 @@ bool testMergeTwoLists(void)
   bool retVal = true;
 
   for (size_t i = 0; i < sizeof(expect) / sizeof(int); ++i) {
-    retVal = (ASSERT(expect[i] == p->val) || false) && retVal;
+    retVal = ASSERT(expect[i] == p->val) && retVal;
     p = p->next;
   }
 
