@@ -8,7 +8,6 @@ typedef struct mapping {
   bool (*callback)(void);
 } mapping_t;
 
-extern bool testTwoSum(void);
 extern bool testMergeTwoLists(void);
 
 #endif /* __TEST_H__ */
