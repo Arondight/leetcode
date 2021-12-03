@@ -5,7 +5,7 @@ TESTS	= $(shell find ./ -maxdepth 1 -type f -name '$(TEST)_*.c')
 
 CC	= gcc
 RM	= rm -f
-CFLAGS	= -iquote ./utils/ -I ./uthash/src/ -std=gnu99 -Wall -Wextra -O1
+CFLAGS	= -iquote ./utils/ -iquote ./uthash/src/ -std=gnu99 -Wall -Wextra -O1
 
 
 .PHONY: all
