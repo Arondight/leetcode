@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "linked_list.h"
 #include "test_assert.h"
-#include "0021_merge_two_sorted_lists.h"
 
 extern struct ListNode * mergeTwoLists(struct ListNode * list1, struct ListNode * list2);
 

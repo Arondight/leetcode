@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include "0021_merge_two_sorted_lists.h"
+#include "linked_list.h"
 
 // @lc code=start
 /**
