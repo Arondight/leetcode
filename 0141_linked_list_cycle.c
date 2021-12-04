@@ -15,7 +15,9 @@
  *     struct ListNode *next;
  * };
  */
-bool hasCycle(struct ListNode *head) {
+
+bool hasCycle(struct ListNode *head)
+{
   struct ListNode * fast = head, * slow = head;
 
   while (fast && fast->next) {
@@ -29,4 +31,5 @@ bool hasCycle(struct ListNode *head) {
 
   return false;
 }
+
 // @lc code=end

@@ -9,7 +9,8 @@ struct ListNode {
   struct ListNode * next;
 };
 
-inline struct ListNode * listFromArray(const int *pArray, const size_t length) {
+inline static struct ListNode * listFromArray(const int *pArray, const size_t length)
+{
   struct ListNode * list = NULL, * p = NULL, * pt = NULL;
 
   for (size_t i = 0; i < length; ++i) {

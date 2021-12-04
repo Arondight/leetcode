@@ -15,4 +15,4 @@ make
 
 ## LICENSE
 
-[MIT](LICENSE).
+[MIT License](LICENSE).

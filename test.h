@@ -9,6 +9,7 @@ typedef struct mapping {
 } mapping_t;
 
 extern bool testMergeTwoLists(void);                                  /*   21 */
+extern bool testMergeKLists(void);                                    /*   23 */
 extern bool testHasCycle(void);                                       /*  141 */
 
 #endif /* __TEST_H__ */
