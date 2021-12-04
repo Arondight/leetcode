@@ -4,7 +4,6 @@
  * [21] 合并两个有序链表
  */
 
-#include <stdio.h>
 #include "linked_list.h"
 
 // @lc code=start

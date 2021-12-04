@@ -4,8 +4,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-#define OK        ((puts("OK"), true))
-#define FAILED    ((puts("FAILED"), false))
-#define ASSERT(e) ((printf(("ASSERT (" #e ") ... ")), ((e) ? OK : FAILED)))
+#define ASSERT_OK       ((puts("OK"), true))
+#define ASSERT_FAILED   ((puts("FAILED"), false))
+#define ASSERT(e)       ((printf(("ASSERT (" #e ") ... ")), ((e) ? ASSERT_OK : ASSERT_FAILED)))
 
 #endif /* __TEST_ASSERT_H__ */

@@ -1,10 +1,9 @@
 /*
- * @lc app=leetcode.cn id=141 lang=c
+ * @lc app=leetcode.cn id=142 lang=c
  *
- * [141] 环形链表
+ * [142] 环形链表 II
  */
 
-#include <stdbool.h>
 #include "linked_list.h"
 
 // @lc code=start
@@ -16,20 +15,31 @@
  * };
  */
 
-bool hasCycle(struct ListNode * head)
+struct ListNode * detectCycle(struct ListNode * head)
 {
   struct ListNode * fast = head, * slow = head;
 
-  while (fast && fast->next) {
+  while (fast) {
     slow = slow->next;
+
+    if (!fast->next) {
+      return NULL;
+    }
+
     fast = fast->next->next;
 
     if (fast == slow) {
-      return true;
+      break;
     }
   }
 
-  return false;
+  if (!fast || !slow) {
+    return NULL;
+  }
+
+  for (fast = head; fast != slow; fast = fast->next, slow = slow->next);
+
+  return fast;
 }
 
 // @lc code=end
