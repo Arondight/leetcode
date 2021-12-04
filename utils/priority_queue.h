@@ -41,8 +41,9 @@ inline static void _PQSink(void * const PQ, const size_t index, const size_t end
   }
 }
 
-inline static void * PQCreate(const size_t length, const size_t elemSize)
+inline static void * PQCreate(const size_t length, size_t * const end, const size_t elemSize)
 {
+  *end = 0;
   return malloc((length + 1) * elemSize);
 }
 

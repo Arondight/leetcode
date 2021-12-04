@@ -28,8 +28,8 @@ struct ListNode * mergeKLists(struct ListNode ** lists, int listsSize)
 {
   struct ListNode dummpy = { 0, NULL };
   struct ListNode * p = &dummpy;
-  void * pq = PQCreate(listsSize, sizeof(struct ListNode));
   size_t end = 0;
+  void * pq = PQCreate(listsSize, &end, sizeof(struct ListNode));
 
   for (size_t i = 0; i < (size_t)listsSize; ++i) {
     if (lists[i]) {
