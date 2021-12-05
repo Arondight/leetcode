@@ -2,7 +2,7 @@
 
 ## ABOUT
 
-C solutions of Leetcode problems.
+C solutions of LeetCode problems.
 
 ## USAGE
 

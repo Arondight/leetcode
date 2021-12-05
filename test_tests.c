@@ -5,6 +5,7 @@ const mapping_t tests[] = {
   {   19, testRemoveNthFromEnd },
   {   21, testMergeTwoLists },
   {   23, testMergeKLists },
+  {   92, testReverseBetween },
   {  141, testHasCycle },
   {  142, testDetectCycle },
   {  160, testGetIntersectionNode },
