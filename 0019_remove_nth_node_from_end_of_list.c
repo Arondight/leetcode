@@ -21,7 +21,7 @@ struct ListNode * removeNthFromEnd(struct ListNode * head, int n)
   struct ListNode * p1 = &dummpy, * p2 = &dummpy;
   struct ListNode * temp = NULL;
 
-  for (size_t i = 0; i < n + 1; ++i) {
+  for (size_t i = 0; i < (size_t)n + 1; ++i) {
     p1 = p1->next;
   }
 

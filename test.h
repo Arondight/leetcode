@@ -13,6 +13,7 @@ extern bool testMergeTwoLists(void);                                  /*   21 */
 extern bool testMergeKLists(void);                                    /*   23 */
 extern bool testHasCycle(void);                                       /*  141 */
 extern bool testDetectCycle(void);                                    /*  142 */
+extern bool testGetIntersectionNode(void);                            /*  160 */
 extern bool testMiddleNode(void);                                     /*  876 */
 
 #endif /* __TEST_H__ */

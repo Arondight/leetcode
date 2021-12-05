@@ -10,9 +10,9 @@ extern size_t testsSize;
 static int usage(void)
 {
   const char * const text[] = {
-    "Options:",
-    "  --problem-number, -n\t\tLeetCode problem id",
-    "  --help, -h\t\t\tshow this help",
+    "options:",
+    "  --problem-number, -n     LeetCode problem ID",
+    "  --help, -h               show this help",
     NULL
   };
 

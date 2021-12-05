@@ -7,6 +7,7 @@ const mapping_t tests[] = {
   {   23, testMergeKLists },
   {  141, testHasCycle },
   {  142, testDetectCycle },
+  {  160, testGetIntersectionNode },
   {  876, testMiddleNode },
 };
 const size_t testsSize = sizeof(tests) / sizeof(mapping_t);
