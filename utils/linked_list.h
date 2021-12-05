@@ -29,4 +29,40 @@ inline static struct ListNode * listFromArray(const int *pArray, const size_t le
   return list;
 }
 
+inline static struct ListNode * reverseListBetween(struct ListNode * const a, struct ListNode * const b)
+{
+  struct ListNode * pre = NULL, * cur = a, * next = b;
+
+  while (cur != b) {
+    next = cur->next;
+    cur->next = pre;
+    pre = cur;
+    cur = next;
+  }
+
+  return pre;
+}
+
+inline static struct ListNode * reverseList(struct ListNode * head)
+{
+  return reverseListBetween(head, NULL);
+}
+
+inline static struct ListNode * reverseListFirstN(struct ListNode * head, const size_t n)
+{
+  static struct ListNode * successor = NULL;
+
+  if (1 == n) {
+    successor = head->next;
+    return head;
+  }
+
+  struct ListNode * last = reverseListFirstN(head->next, n - 1);
+
+  head->next->next = head;
+  head->next = successor;
+
+  return last;
+}
+
 #endif /* __LINKED_LIST_H__ */

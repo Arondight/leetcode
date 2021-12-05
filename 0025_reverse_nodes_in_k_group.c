@@ -15,20 +15,6 @@
  * };
  */
 
-struct ListNode * reverse(struct ListNode * const a, struct ListNode * const b)
-{
-  struct ListNode * pre = NULL, * cur = a, * next = b;
-
-  while (cur != b) {
-    next = cur->next;
-    cur->next = pre;
-    pre = cur;
-    cur = next;
-  }
-
-  return pre;
-}
-
 struct ListNode * reverseKGroup(struct ListNode * head, int k)
 {
   struct ListNode * a = head, * b = head, * new = NULL;
@@ -45,7 +31,7 @@ struct ListNode * reverseKGroup(struct ListNode * head, int k)
     b = b->next;
   }
 
-  new = reverse(a, b);
+  new = reverseListBetween(a, b);
   a->next = reverseKGroup(b, k);
   return new;
 }

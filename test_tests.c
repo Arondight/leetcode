@@ -10,6 +10,7 @@ const test_t tests[] = {
   {  141, testHasCycle },
   {  142, testDetectCycle },
   {  160, testGetIntersectionNode },
+  {  234, testIsPalindrome },
   {  876, testMiddleNode },
 };
 const size_t testsSize = sizeof(tests) / sizeof(test_t);

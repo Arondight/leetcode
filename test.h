@@ -16,6 +16,7 @@ extern bool testReverseBetween(void);                                 /*   92 */
 extern bool testHasCycle(void);                                       /*  141 */
 extern bool testDetectCycle(void);                                    /*  142 */
 extern bool testGetIntersectionNode(void);                            /*  160 */
+extern bool testIsPalindrome(void);                                   /*  234 */
 extern bool testMiddleNode(void);                                     /*  876 */
 
 #endif /* __TEST_H__ */
