@@ -10,6 +10,7 @@ typedef struct mapping {
 
 extern bool testRemoveNthFromEnd(void);                               /*   19 */
 extern bool testMergeTwoLists(void);                                  /*   21 */
+extern bool testReverseKGroup(void);                                  /*   25 */
 extern bool testMergeKLists(void);                                    /*   23 */
 extern bool testReverseBetween(void);                                 /*   92 */
 extern bool testHasCycle(void);                                       /*  141 */
