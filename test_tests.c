@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include "test.h"
 
-const mapping_t tests[] = {
+const test_t tests[] = {
   {   19, testRemoveNthFromEnd },
   {   21, testMergeTwoLists },
   {   23, testMergeKLists },
@@ -12,4 +12,4 @@ const mapping_t tests[] = {
   {  160, testGetIntersectionNode },
   {  876, testMiddleNode },
 };
-const size_t testsSize = sizeof(tests) / sizeof(mapping_t);
+const size_t testsSize = sizeof(tests) / sizeof(test_t);

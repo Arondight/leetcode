@@ -3,10 +3,10 @@
 
 #include <stdbool.h>
 
-typedef struct mapping {
-  int number;
-  bool (*callback)(void);
-} mapping_t;
+typedef struct test {
+  int id;
+  bool (*handler)(void);
+} test_t;
 
 extern bool testRemoveNthFromEnd(void);                               /*   19 */
 extern bool testMergeTwoLists(void);                                  /*   21 */

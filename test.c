@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "test.h"
 
-extern const mapping_t tests[];
+extern const test_t tests[];
 extern size_t testsSize;
 
 static int usage(void)
@@ -50,8 +50,8 @@ int main(const int argc, const char * const * argv)
   }
 
   for (size_t i = 0; i < testsSize; ++i) {
-    if (number == tests[i].number) {
-      return !(*(tests[i].callback))();
+    if (number == tests[i].id) {
+      return !(*(tests[i].handler))();
     }
   }
 
