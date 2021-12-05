@@ -2,6 +2,7 @@
 #include "test.h"
 
 const mapping_t tests[] = {
+  {   19, testRemoveNthFromEnd },
   {   21, testMergeTwoLists },
   {   23, testMergeKLists },
   {  141, testHasCycle },
