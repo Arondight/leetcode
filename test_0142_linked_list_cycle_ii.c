@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * detectCycle(struct ListNode * head);
+extern struct ListNode * detectCycle(struct ListNode * head);
 
 bool testDetectCycle(void)
 {

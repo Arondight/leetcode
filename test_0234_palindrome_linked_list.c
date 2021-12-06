@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-bool isPalindrome(struct ListNode * head);
+extern bool isPalindrome(struct ListNode * head);
 
 bool testIsPalindrome(void)
 {

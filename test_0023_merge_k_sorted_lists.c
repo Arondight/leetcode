@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * mergeKLists(struct ListNode ** lists, int listsSize);
+extern struct ListNode * mergeKLists(struct ListNode ** lists, int listsSize);
 
 bool testMergeKLists(void)
 {

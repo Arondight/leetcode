@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * getIntersectionNode(struct ListNode * headA, struct ListNode * headB);
+extern struct ListNode * getIntersectionNode(struct ListNode * headA, struct ListNode * headB);
 
 bool testGetIntersectionNode(void)
 {

@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * middleNode(struct ListNode * head);
+extern struct ListNode * middleNode(struct ListNode * head);
 
 bool testMiddleNode(void)
 {

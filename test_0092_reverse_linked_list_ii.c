@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * reverseBetween(struct ListNode * head, int left, int right);
+extern struct ListNode * reverseBetween(struct ListNode * head, int left, int right);
 
 bool testReverseBetween(void)
 {

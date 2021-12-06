@@ -2,7 +2,7 @@
 #include "linked_list.h"
 #include "test_assert.h"
 
-struct ListNode * removeNthFromEnd(struct ListNode * head, int n);
+extern struct ListNode * removeNthFromEnd(struct ListNode * head, int n);
 
 bool testRemoveNthFromEnd(void)
 {
