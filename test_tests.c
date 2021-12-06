@@ -8,6 +8,7 @@ const test_t tests[] = {
   {   25, testReverseKGroup },
   {   92, testReverseBetween },
   {  114, testFlatten },
+  {  116, testConnect },
   {  141, testHasCycle },
   {  142, testDetectCycle },
   {  160, testGetIntersectionNode },
