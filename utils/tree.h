@@ -44,19 +44,17 @@ inline static void arrayFromTree(int * pArray, TreeNode_t * root, size_t index)
     return;
   }
 
+  pArray[index++] = root->val;
+
   el = (element_t *)malloc(sizeof(element_t));
   el->node = root;
-  pArray[index++] = el->node->val;
   STACK_PUSH(stack, el);
 
   while (!STACK_EMPTY(stack)) {
     STACK_POP(stack, temp);
 
     if (temp->node->left) {
-      el = (element_t *)malloc(sizeof(element_t));
-      el->node = temp->node->left;
-      pArray[index++] = el->node->val;
-      STACK_PUSH(stack, el);
+      pArray[index++] = temp->node->left->val;
     } else {
       if (temp->node->right) {
         pArray[index++] = 0;
@@ -64,14 +62,23 @@ inline static void arrayFromTree(int * pArray, TreeNode_t * root, size_t index)
     }
 
     if (temp->node->right) {
-      el = (element_t *)malloc(sizeof(element_t));
-      el->node = temp->node->right;
-      pArray[index++] = el->node->val;
-      STACK_PUSH(stack, el);
+      pArray[index++] = temp->node->right->val;
     } else {
       if (temp->node->left) {
         pArray[index++] = 0;
       }
+    }
+
+    if (temp->node->right) {
+      el = (element_t *)malloc(sizeof(element_t));
+      el->node = temp->node->right;
+      STACK_PUSH(stack, el);
+    }
+
+    if (temp->node->left) {
+      el = (element_t *)malloc(sizeof(element_t));
+      el->node = temp->node->left;
+      STACK_PUSH(stack, el);
     }
 
     free(temp);
