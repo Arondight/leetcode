@@ -4,17 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct ListNode {
+typedef struct ListNode {
   int val;
   struct ListNode * next;
-};
+} ListNode_t;
 
-inline static struct ListNode * listFromArray(const int *pArray, const size_t length)
+inline static ListNode_t * listFromArray(const int *pArray, const size_t length)
 {
-  struct ListNode * list = NULL, * p = NULL, * pt = NULL;
+  ListNode_t * list = NULL, * p = NULL, * pt = NULL;
 
   for (size_t i = 0; i < length; ++i) {
-    pt = (struct ListNode *)malloc(sizeof(struct ListNode));
+    pt = (ListNode_t *)malloc(sizeof(ListNode_t));
     pt->val = pArray[i];
     pt->next = NULL;
 
@@ -29,9 +29,9 @@ inline static struct ListNode * listFromArray(const int *pArray, const size_t le
   return list;
 }
 
-inline static struct ListNode * reverseListBetween(struct ListNode * const a, struct ListNode * const b)
+inline static ListNode_t * reverseListBetween(ListNode_t * const a, ListNode_t * const b)
 {
-  struct ListNode * pre = NULL, * cur = a, * next = b;
+  ListNode_t * pre = NULL, * cur = a, * next = b;
 
   while (cur != b) {
     next = cur->next;
@@ -43,21 +43,21 @@ inline static struct ListNode * reverseListBetween(struct ListNode * const a, st
   return pre;
 }
 
-inline static struct ListNode * reverseList(struct ListNode * head)
+inline static ListNode_t * reverseList(ListNode_t * head)
 {
   return reverseListBetween(head, NULL);
 }
 
-inline static struct ListNode * reverseListFirstN(struct ListNode * head, const size_t n)
+inline static ListNode_t * reverseListFirstN(ListNode_t * head, const size_t n)
 {
-  static struct ListNode * successor = NULL;
+  static ListNode_t * successor = NULL;
 
   if (1 == n) {
     successor = head->next;
     return head;
   }
 
-  struct ListNode * last = reverseListFirstN(head->next, n - 1);
+  ListNode_t * last = reverseListFirstN(head->next, n - 1);
 
   head->next->next = head;
   head->next = successor;
