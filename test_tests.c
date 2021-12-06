@@ -7,6 +7,7 @@ const test_t tests[] = {
   {   23, testMergeKLists },
   {   25, testReverseKGroup },
   {   92, testReverseBetween },
+  {  114, testFlatten },
   {  141, testHasCycle },
   {  142, testDetectCycle },
   {  160, testGetIntersectionNode },

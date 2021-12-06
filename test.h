@@ -13,6 +13,7 @@ extern bool testMergeTwoLists(void);                                  /*   21 */
 extern bool testReverseKGroup(void);                                  /*   25 */
 extern bool testMergeKLists(void);                                    /*   23 */
 extern bool testReverseBetween(void);                                 /*   92 */
+extern bool testFlatten(void);                                        /*  114 */
 extern bool testHasCycle(void);                                       /*  141 */
 extern bool testDetectCycle(void);                                    /*  142 */
 extern bool testGetIntersectionNode(void);                            /*  160 */
