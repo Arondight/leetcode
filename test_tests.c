@@ -12,6 +12,7 @@ const test_t tests[] = {
   {  141, testHasCycle },
   {  142, testDetectCycle },
   {  160, testGetIntersectionNode },
+  {  226, testInvertTree },
   {  234, testIsPalindrome },
   {  876, testMiddleNode },
 };

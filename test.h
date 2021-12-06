@@ -18,6 +18,7 @@ extern bool testConnect(void);                                        /*  116 */
 extern bool testHasCycle(void);                                       /*  141 */
 extern bool testDetectCycle(void);                                    /*  142 */
 extern bool testGetIntersectionNode(void);                            /*  160 */
+extern bool testInvertTree(void);                                     /*  226 */
 extern bool testIsPalindrome(void);                                   /*  234 */
 extern bool testMiddleNode(void);                                     /*  876 */
 
