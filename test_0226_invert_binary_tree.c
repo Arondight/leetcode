@@ -22,5 +22,8 @@ bool testInvertTree(void)
     retVal = ASSERT(expect[i] == result[i]) && retVal;
   }
 
+  free(result);
+  result = NULL;
+
   return retVal;
 }
