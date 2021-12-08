@@ -15,5 +15,10 @@ bool testIsPalindrome(void)
   retVal = ASSERT(true == isPalindrome(list1)) && retVal;
   retVal = ASSERT(false == isPalindrome(list2)) && retVal;
 
+  freeList(list1);
+  list1 = NULL;
+  freeList(list2);
+  list2 = NULL;
+
   return retVal;
 }

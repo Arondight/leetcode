@@ -21,5 +21,10 @@ bool testMiddleNode(void)
   for (size_t i = 0; i < 4 - 1; p = p->next, ++i);
   retVal = ASSERT(p == middleNode(list2)) && retVal;
 
+  freeList(list1);
+  list1 = NULL;
+  freeList(list2);
+  list2 = NULL;
+
   return retVal;
 }

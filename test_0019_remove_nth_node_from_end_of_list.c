@@ -19,7 +19,13 @@ bool testRemoveNthFromEnd(void)
     retVal = ASSERT(a1Expect[i] == p->val) && retVal;
   }
 
-  retVal = ASSERT(NULL == removeNthFromEnd(list2, 1)) && retVal;
+  freeList(result); /* list1 */
+  list1 = result = NULL;
+
+  retVal = ASSERT(result == removeNthFromEnd(list2, 1)) && retVal;
+
+  freeList(result);
+  result = NULL;
 
   return retVal;
 }

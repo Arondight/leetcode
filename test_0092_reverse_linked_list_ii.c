@@ -17,5 +17,8 @@ bool testReverseBetween(void)
     retVal = ASSERT(expect[i] == p->val) && retVal;
   }
 
+  freeList(list); /* result */
+  list = result = NULL;
+
   return retVal;
 }

@@ -9,6 +9,18 @@ typedef struct ListNode {
   struct ListNode * next;
 } ListNode_t;
 
+inline static void freeList(ListNode_t * head)
+{
+  ListNode_t * cur = NULL;
+
+  while (head) {
+    cur = head;
+    head = head->next;
+    free(cur);
+    cur = NULL;
+  }
+}
+
 inline static ListNode_t * listFromArray(const int *pArray, const size_t length)
 {
   ListNode_t * list = NULL, * p = NULL, * pt = NULL;

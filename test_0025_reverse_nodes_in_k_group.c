@@ -26,5 +26,10 @@ bool testReverseKGroup(void)
     retVal = ASSERT(expect2[i] == p->val) && retVal;
   }
 
+  freeList(list1);  /* result1 */
+  list1 = result1 = NULL;
+  freeList(list2);  /* result2 */
+  list1 = result2 = NULL;
+
   return retVal;
 }

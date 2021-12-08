@@ -34,5 +34,14 @@ bool testMergeKLists(void)
     p = p->next;
   }
 
+  for (size_t i = 0; i < listsSize; ++i) {
+    freeList(lists[i]);
+    lists[i] = NULL;
+  }
+
+  free(lists);  /* result */
+  lists = NULL;
+  result = NULL;
+
   return retVal;
 }

@@ -14,5 +14,11 @@ bool testHasCycle(void)
   for (p = list; p->next; p = p->next);
   p->next = list->next;
 
-  return ASSERT(true == hasCycle(list)) && retVal;
+  retVal = ASSERT(true == hasCycle(list)) && retVal;
+
+  p->next = NULL;
+  freeList(list);
+  list = NULL;
+
+  return retVal;
 }

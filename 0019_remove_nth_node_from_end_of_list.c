@@ -33,6 +33,7 @@ struct ListNode * removeNthFromEnd(struct ListNode * head, int n)
   temp = p2->next;
   p2->next = p2->next->next;
   free(temp);
+  temp = NULL;
 
   return dummpy.next;
 }
