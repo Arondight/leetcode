@@ -36,6 +36,24 @@ inline static void treeFromArray(TreeNode_t ** root, const int * const pArray, c
   treeFromArray(&(*root)->right, pArray, index * 2 + 2, length);
 }
 
+inline static void freeTree(TreeNode_t * root)
+{
+  if (!root) {
+    return;
+  }
+
+  if (root->left) {
+    freeTree(root->left);
+  }
+
+  if (root->right) {
+    freeTree(root->right);
+  }
+
+  free(root);
+  root = NULL;
+}
+
 inline static void arrayFromTree(int * pArray, TreeNode_t * root, size_t index)
 {
   element_t * stack = NULL, * temp = NULL, * el = NULL;

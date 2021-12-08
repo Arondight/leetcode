@@ -22,6 +22,8 @@ bool testFlatten(void)
     retVal = ASSERT(expect[i] == result[i]) && retVal;
   }
 
+  freeTree(root);
+  root = NULL;
   free(result);
   result = NULL;
 
