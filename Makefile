@@ -1,7 +1,7 @@
 TEST	= test
-TEST_C	= ./$(TEST).c
-SOURCES	= $(sort $(shell find ./ -maxdepth 1 -type f -name '*.c' ! -name '$(TEST)*.c'))
-TESTS	= $(sort $(shell find ./ -maxdepth 1 -type f -name '$(TEST)_*.c'))
+TEST_C	= $(wildcard $(TEST).c)
+SOURCES	= $(sort $(filter-out $(TEST)%, $(wildcard *.c)))
+TESTS	= $(sort $(wildcard $(TEST)_*.c))
 
 CC	= gcc
 RM	= rm -f
@@ -11,33 +11,29 @@ CFLAGS	= -iquote ./utils/ -iquote ./uthash/src/ -std=gnu99 -Wall -Wextra -O1
 .PHONY: all
 all: $(TEST_C)
 
-$(patsubst %.c, %.d, $(SOURCES:.c=.d) $(TESTS:.c=.d)):%.d:%.c
+$(patsubst %.c, %.d, $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d)):%.d:%.c
 	$(CC) $(CFLAGS) -o $@ -MM $^
 
-include $(SOURCES:.c=.d) $(TESTS:.c=.d)
+include $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d)
 
-$(TEST_C): $(SOURCES:.c=.o) $(TESTS:.c=.o)
-	$(CC) ${CFLAGS} -o $(TEST_C:.c=) $^ $@
+$(TEST_C): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o)
+	$(CC) ${CFLAGS} -o $(TEST_C:%.c=%) $^ $@
 
 
-.PHONY: test
-test: all
-	for t in $(TESTS); do \
-		id=$$(echo "$$t" | grep -oP '(?<=test_)\d+(?=_)'); \
-		\
-		if [[ -n "$$id" ]]; then \
-			echo -e $$_{1..100}"\b="; \
-			echo "Test for ID $${id}"; \
-			echo -e $$_{1..100}"\b-"; \
-			$(TEST_C:.c=) -n "$$id"; \
-			\
-			if [[ 0 -ne "$$?" ]]; then \
-				exit -1; \
-			fi \
-		fi \
-	done
+.PHONY: $(TEST)
+$(TEST): all
+	for id in $(foreach t, $(filter-out $(TEST)_tests.c, $(TESTS)), $(shell echo $(t) | cut -c 6-9)); do \
+		printf "%0.s=" {1..80}; echo; \
+		echo "Test for ID $${id}\n"; \
+		printf "%0.s-" {1..80}; echo; \
+		./$(TEST) -n "$$id"; \
+	done; \
+	\
+	printf "%0.s=" {1..80}; echo; \
+	echo "All passed"; \
+	printf "%0.s=" {1..80}; echo;
 
 
 .PHONY: clean
 clean:
-	@${RM} $(TEST_C:.c=) $(SOURCES:.c=.o) $(TESTS:.c=.o) $(SOURCES:.c=.d) $(TESTS:.c=.d)
+	@${RM} $(TEST_C:%.c=%) $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o) $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d)
