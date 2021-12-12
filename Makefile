@@ -7,6 +7,8 @@ CC	= gcc
 RM	= rm -f
 CFLAGS	= -iquote ./utils/ -iquote ./uthash/src/ -std=gnu99 -Wall -Wextra -O1
 
+repeat	= $(shell printf "%0.s$(strip $(1))" {1..$(strip $(2))})
+
 
 .PHONY: all
 all: $(TEST_C)
@@ -22,16 +24,12 @@ $(TEST_C): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o)
 
 .PHONY: $(TEST)
 $(TEST): all
-	for id in $(foreach t, $(filter-out $(TEST)_tests.c, $(TESTS)), $(shell echo $(t) | cut -c 6-9)); do \
-		printf "%0.s=" {1..80}; echo; \
-		echo "Test for ID $${id}\n"; \
-		printf "%0.s-" {1..80}; echo; \
+	@for id in $(foreach t, $(filter-out $(TEST)_tests.c, $(TESTS)), $(shell echo $(t) | cut -c 6-9)); do \
+		echo -e "$(call repeat, =, 80)\nTest for ID $${id}\n$(call repeat, -, 80)\n"; \
 		./$(TEST) -n "$$id"; \
 	done; \
 	\
-	printf "%0.s=" {1..80}; echo; \
-	echo "All passed"; \
-	printf "%0.s=" {1..80}; echo;
+	echo -e "All passed\n$(call repeat, =, 80)";
 
 
 .PHONY: clean
