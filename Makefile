@@ -29,7 +29,7 @@ $(TEST): all
 		./$(TEST) -n "$$id"; \
 	done; \
 	\
-	echo -e "All passed\n$(call repeat, =, 80)";
+	echo -e "$(call repeat, =, 80)\nAll passed!\n$(call repeat, =, 80)";
 
 
 .PHONY: clean
