@@ -19,7 +19,7 @@
 #include "priority_queue.h"
 
 /* A min heap */
-bool isGreaterThan(const void * const a, const void * const b)
+bool mergeKListsIsGreaterThan(const void * const a, const void * const b)
 {
   return ((struct ListNode *)a)->val > ((struct ListNode *)b)->val;
 }
@@ -33,16 +33,16 @@ struct ListNode * mergeKLists(struct ListNode ** lists, int listsSize)
 
   for (size_t i = 0; i < (size_t)listsSize; ++i) {
     if (lists[i]) {
-      PQInsert(pq, lists[i], &end, sizeof(struct ListNode), isGreaterThan);
+      PQInsert(pq, lists[i], &end, sizeof(struct ListNode), mergeKListsIsGreaterThan);
     }
   }
 
   while (end > 0)  {
-    struct ListNode * temp = PQDelete(pq, &end, sizeof(struct ListNode), isGreaterThan);
+    struct ListNode * temp = PQDelete(pq, &end, sizeof(struct ListNode), mergeKListsIsGreaterThan);
     p->next = temp;
 
     if (temp->next) {
-      PQInsert(pq, temp->next, &end, sizeof(struct ListNode), isGreaterThan);
+      PQInsert(pq, temp->next, &end, sizeof(struct ListNode), mergeKListsIsGreaterThan);
     }
 
     p = p->next;

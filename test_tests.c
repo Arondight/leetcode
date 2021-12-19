@@ -14,6 +14,7 @@ const test_t tests[] = {
   {  160, testGetIntersectionNode },
   {  226, testInvertTree },
   {  234, testIsPalindrome },
+  {  654, testConstructMaximumBinaryTree },
   {  876, testMiddleNode },
 };
 const size_t testsSize = sizeof(tests) / sizeof(test_t);

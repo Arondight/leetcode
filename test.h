@@ -20,6 +20,7 @@ extern bool testDetectCycle(void);                                    /*  142 */
 extern bool testGetIntersectionNode(void);                            /*  160 */
 extern bool testInvertTree(void);                                     /*  226 */
 extern bool testIsPalindrome(void);                                   /*  234 */
+extern bool testConstructMaximumBinaryTree(void);                     /*  654 */
 extern bool testMiddleNode(void);                                     /*  876 */
 
 #endif /* __TEST_H__ */
