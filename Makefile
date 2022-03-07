@@ -26,7 +26,7 @@ $(TEST_C): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o)
 $(TEST): all
 	@for id in $(foreach t, $(filter-out $(TEST)_tests.c, $(TESTS)), $(shell echo $(t) | cut -c 6-9)); do \
 		echo -e "$(call repeat, =, 80)\nTest for ID $${id}\n$(call repeat, -, 80)"; \
-		./$(TEST) -n "$$id"; \
+		./$(TEST) -n "$$id" || exit 1; \
 	done; \
 	\
 	echo -e "$(call repeat, =, 80)\nAll passed!\n$(call repeat, =, 80)";

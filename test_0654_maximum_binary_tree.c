@@ -9,7 +9,7 @@ bool testConstructMaximumBinaryTree(void)
 {
   const int a[] = { 3, 2, 1, 6, -1, 5 };
   const int expect[] = { 6, 3, 5, 0, 2, -1, 0, 0, 1 };
-  struct TreeNode * root = constructMaximumBinaryTree(a, sizeof(a) / sizeof(int));
+  struct TreeNode * root = constructMaximumBinaryTree((int *)a, sizeof(a) / sizeof(int));
   int * result = (int *)malloc(sizeof(expect));
   bool retVal = true;
 

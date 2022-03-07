@@ -19,7 +19,7 @@
 
 #include <limits.h>
 
-struct TreeNode * const constructMaximumBinaryTreeHelper(int * const nums, const int start, const int end)
+struct TreeNode * constructMaximumBinaryTreeHelper(int * const nums, const int start, const int end)
 {
   struct TreeNode * root = NULL;
   int max = INT_MIN;
