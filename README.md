@@ -9,7 +9,7 @@ C solutions of LeetCode problems.
 ```
 git clone https://github.com/Arondight/leetcode.git
 cd ./leetcode/
-make test
+make check
 ```
 
 ## LICENSE
