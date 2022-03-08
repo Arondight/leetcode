@@ -15,6 +15,17 @@ AllowShortLoopsOnASingleLine: false
 AlwaysBreakBeforeMultilineStrings: false
 BinPackArguments: true
 BreakBeforeBraces: Custom
+BreakBeforeTernaryOperators: true
+BreakStringLiterals: true
+ColumnLimit: 120
+Cpp11BracedListStyle: false
+IncludeBlocks: Merge
+IndentCaseLabels: true
+IndentPPDirectives: AfterHash
+IndentWidth: 2
+PointerAlignment: Right
+UseTab: Never
+
 BraceWrapping:
   AfterCaseLabel: false
   AfterClass: true
@@ -34,13 +45,3 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyNamespace: true
   SplitEmptyRecord: true
-BreakBeforeTernaryOperators: true
-ColumnLimit: 120
-Cpp11BracedListStyle: false
-IncludeBlocks: Merge
-IndentCaseLabels: true
-IndentPPDirectives: AfterHash
-IndentWidth: 2
-#InsertBraces: true
-PointerAlignment: Right
-UseTab: Never

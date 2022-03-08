@@ -9,8 +9,12 @@ extern const size_t testsSize;
 
 static int usage(void)
 {
-  const char *const text[] = { "options:", "  --problem-id, -n     LeetCode problem ID",
-    "  --help, -h           show this help", NULL };
+  const char *const text[] = {
+    "options:",
+    "  --problem-id, -n     LeetCode problem ID",
+    "  --help, -h           show this help",
+    NULL,
+  };
 
   for (size_t i = 0; text[i]; ++i) {
     puts(text[i]);
@@ -24,8 +28,11 @@ int main(const int argc, const char *const *argv)
   int opt = 0;
   int id = 0;
   const char optstr[] = "n:h";
-  const struct option opts[] = { { "problem-id", required_argument, 0, 'n' }, { "help", no_argument, 0, 'h' },
-    { 0, 0, 0, 0 } };
+  const struct option opts[] = {
+    { "problem-id", required_argument, 0, 'n' },
+    { "help", no_argument, 0, 'h' },
+    { 0, 0, 0, 0 },
+  };
 
   if (argc < 2) {
     return usage();
