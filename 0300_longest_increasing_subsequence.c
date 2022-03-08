@@ -14,7 +14,7 @@ int lengthOfLIS(const int * const nums, const int numsSize)
   int *dp = NULL;
   int res = 1;
 
-  if (!(dp = (int *)malloc((numsSize + 1) * sizeof(int)))) {
+  if (!(dp = (int *)malloc(numsSize * sizeof(int)))) {
     return 1;
   }
 
