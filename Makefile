@@ -16,10 +16,12 @@ repeat	= $(shell printf "%0.s$(strip $(1))" {1..$(strip $(2))})
 .PHONY: all
 all: $(TEST)
 
+
 $(patsubst %.c, %.d, $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d) $(TEST_C:%.c=%.d)):%.d:%.c
 	$(CC) $(CFLAGS) -o $@ -MM $^
 
 include $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d) $(TEST_C:%.c=%.d)
+
 
 $(TEST): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o) $(TEST_C:%.c=%.o)
 	for file in $^; do \
@@ -27,6 +29,7 @@ $(TEST): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o) $(TEST_C:%.c=%.o)
 	done;
 
 	$(CC) ${CFLAGS} -o $(TEST_C:%.c=%) $(TEST_C:%.c=%.a)
+
 
 .PHONY: $(CHECK)
 $(CHECK): all
@@ -46,6 +49,7 @@ clean:
 		     $(TEST); do \
 		${RM} -f "$$file"; \
 	done;
+
 
 .PHONY: format
 format:
