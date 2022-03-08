@@ -24,7 +24,7 @@ int lengthOfLIS(const int * const nums, const int numsSize)
 
   for (int i = 0; i < numsSize; ++i) {
     for (int j = 0; j < i; ++j) {
-      if (nums[i] > nums[j]) {
+      if (nums[j] < nums[i]) {
         if (dp[j] + 1 > dp[i]) {
           dp[i] = dp[j] + 1;
         }
@@ -36,6 +36,11 @@ int lengthOfLIS(const int * const nums, const int numsSize)
     if (dp[i] > res) {
       res = dp[i];
     }
+  }
+
+  if (dp) {
+    free(dp);
+    dp = NULL;
   }
 
   return res;
