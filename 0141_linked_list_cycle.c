@@ -4,8 +4,8 @@
  * [141] 环形链表
  */
 
-#include <stdbool.h>
 #include "linked_list.h"
+#include <stdbool.h>
 
 // @lc code=start
 /**
@@ -16,9 +16,9 @@
  * };
  */
 
-bool hasCycle(struct ListNode * head)
+bool hasCycle(struct ListNode *head)
 {
-  struct ListNode * fast = head, * slow = head;
+  struct ListNode *fast = head, *slow = head;
 
   while (fast && fast->next) {
     slow = slow->next;

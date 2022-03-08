@@ -15,9 +15,9 @@
  * };
  */
 
-struct ListNode * reverseKGroup(struct ListNode * head, int k)
+struct ListNode *reverseKGroup(struct ListNode *head, int k)
 {
-  struct ListNode * a = head, * b = head, * new = NULL;
+  struct ListNode *a = head, *b = head, *new = NULL;
 
   if (!head) {
     return NULL;

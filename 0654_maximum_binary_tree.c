@@ -4,8 +4,8 @@
  * [654] 最大二叉树
  */
 
-#include <stdio.h>
 #include "tree.h"
+#include <stdio.h>
 
 // @lc code=start
 /**
@@ -19,9 +19,9 @@
 
 #include <limits.h>
 
-struct TreeNode * constructMaximumBinaryTreeHelper(int * const nums, const int start, const int end)
+struct TreeNode *constructMaximumBinaryTreeHelper(int *const nums, const int start, const int end)
 {
-  struct TreeNode * root = NULL;
+  struct TreeNode *root = NULL;
   int max = INT_MIN;
   int index = 0;
 
@@ -44,7 +44,7 @@ struct TreeNode * constructMaximumBinaryTreeHelper(int * const nums, const int s
   return root;
 }
 
-struct TreeNode * constructMaximumBinaryTree(int * nums, int numsSize)
+struct TreeNode *constructMaximumBinaryTree(int *nums, int numsSize)
 {
   return constructMaximumBinaryTreeHelper(nums, 0, numsSize - 1);
 }

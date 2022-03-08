@@ -8,9 +8,9 @@
 
 struct Node {
   int val;
-  struct Node * left;
-  struct Node * right;
-  struct Node * next;
+  struct Node *left;
+  struct Node *right;
+  struct Node *next;
 };
 
 // @lc code=start
@@ -24,7 +24,7 @@ struct Node {
  * };
  */
 
-static void connetNodes(struct Node * const n1, struct Node * const n2)
+static void connetNodes(struct Node *const n1, struct Node *const n2)
 {
   if (!(n1 && n2)) {
     return;
@@ -37,7 +37,7 @@ static void connetNodes(struct Node * const n1, struct Node * const n2)
   connetNodes(n1->right, n2->left);
 }
 
-struct Node * connect(struct Node * root)
+struct Node *connect(struct Node *root)
 {
   if (!root) {
     return NULL;

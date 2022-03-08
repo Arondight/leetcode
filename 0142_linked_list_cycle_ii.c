@@ -15,9 +15,9 @@
  * };
  */
 
-struct ListNode * detectCycle(struct ListNode * head)
+struct ListNode *detectCycle(struct ListNode *head)
 {
-  struct ListNode * fast = head, * slow = head;
+  struct ListNode *fast = head, *slow = head;
 
   while (fast) {
     slow = slow->next;
@@ -37,7 +37,8 @@ struct ListNode * detectCycle(struct ListNode * head)
     return NULL;
   }
 
-  for (fast = head; fast != slow; fast = fast->next, slow = slow->next);
+  for (fast = head; fast != slow; fast = fast->next, slow = slow->next)
+    ;
 
   return fast;
 }

@@ -4,8 +4,8 @@
  * [234] 回文链表
  */
 
-#include <stdbool.h>
 #include "linked_list.h"
+#include <stdbool.h>
 
 // @lc code=start
 /**
@@ -16,10 +16,10 @@
  * };
  */
 
-bool isPalindrome(struct ListNode * head)
+bool isPalindrome(struct ListNode *head)
 {
-  struct ListNode * fast = head, * slow = head;
-  struct ListNode * a = NULL, * b = NULL;
+  struct ListNode *fast = head, *slow = head;
+  struct ListNode *a = NULL, *b = NULL;
 
   while (fast && fast->next) {
     slow = slow->next;

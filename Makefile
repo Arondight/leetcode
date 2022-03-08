@@ -3,8 +3,10 @@ TEST	= test
 TEST_C	= $(wildcard $(TEST).c)
 SOURCES	= $(sort $(filter-out $(TEST)%, $(wildcard *.c)))
 TESTS	= $(sort $(wildcard $(TEST)_*.c))
+UTILS = $(sort $(wildcard utils/*.h))
 
 CC	= gcc
+FORMATTER	= clang-format
 RM	= rm -f
 CFLAGS	= -iquote ./utils/ -iquote ./uthash/src/ -std=gnu99 -Wall -Wextra -O1
 
@@ -44,3 +46,9 @@ clean:
 		     $(TEST); do \
 		${RM} -f "$$file"; \
 	done;
+
+.PHONY: format
+format:
+	for file in $(SOURCES) $(TESTS) $(TEST_C) $(UTILS); do \
+		${FORMATTER} --style file -i "$$file"; \
+	done

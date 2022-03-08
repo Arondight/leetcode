@@ -1,6 +1,6 @@
 #include "test_assert.h"
 
-//extern struct Node * connect(struct Node * root);
+// extern struct Node * connect(struct Node * root);
 
 bool testConnect(void)
 {

@@ -1,7 +1,7 @@
-#include <stdbool.h>
 #include "test_assert.h"
+#include <stdbool.h>
 
-extern int lengthOfLIS(const int * const nums, const int numsSize);
+extern int lengthOfLIS(const int *const nums, const int numsSize);
 
 bool testLengthOfLIS(void)
 {

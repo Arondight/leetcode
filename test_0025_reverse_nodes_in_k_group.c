@@ -1,19 +1,19 @@
-#include <stdbool.h>
 #include "linked_list.h"
 #include "test_assert.h"
+#include <stdbool.h>
 
-extern struct ListNode * reverseKGroup(struct ListNode * head, int k);
+extern struct ListNode *reverseKGroup(struct ListNode *head, int k);
 
 bool testReverseKGroup(void)
 {
   const int a[] = { 1, 2, 3, 4, 5 };
   const int expect1[] = { 2, 1, 4, 3, 5 };
   const int expect2[] = { 3, 2, 1, 4, 5 };
-  struct ListNode * list1 = listFromArray(a, sizeof(a) / sizeof(int));
-  struct ListNode * list2 = listFromArray(a, sizeof(a) / sizeof(int));
-  struct ListNode * result1 = reverseKGroup(list1, 2);
-  struct ListNode * result2 = reverseKGroup(list2, 3);
-  struct ListNode * p = NULL;
+  struct ListNode *list1 = listFromArray(a, sizeof(a) / sizeof(int));
+  struct ListNode *list2 = listFromArray(a, sizeof(a) / sizeof(int));
+  struct ListNode *result1 = reverseKGroup(list1, 2);
+  struct ListNode *result2 = reverseKGroup(list2, 3);
+  struct ListNode *p = NULL;
   bool retVal = true;
 
   p = result1;
@@ -26,9 +26,9 @@ bool testReverseKGroup(void)
     retVal = ASSERT(expect2[i] == p->val) && retVal;
   }
 
-  freeList(list1);  /* result1 */
+  freeList(list1); /* result1 */
   list1 = result1 = NULL;
-  freeList(list2);  /* result2 */
+  freeList(list2); /* result2 */
   list1 = result2 = NULL;
 
   return retVal;

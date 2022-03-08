@@ -6,11 +6,11 @@
 
 typedef struct TreeNode {
   int val;
-  struct TreeNode * left;
-  struct TreeNode * right;
+  struct TreeNode *left;
+  struct TreeNode *right;
 } TreeNode_t;
 
-inline static int deepOfTree(const TreeNode_t * const root)
+inline static int deepOfTree(const TreeNode_t *const root)
 {
   int left = 0, right = 0;
 
@@ -24,7 +24,7 @@ inline static int deepOfTree(const TreeNode_t * const root)
   return (left > right ? left : right) + 1;
 }
 
-inline static void freeTree(TreeNode_t * root)
+inline static void freeTree(TreeNode_t *root)
 {
   if (!root) {
     return;
@@ -42,8 +42,8 @@ inline static void freeTree(TreeNode_t * root)
   root = NULL;
 }
 
-inline static void treeFromArray(TreeNode_t ** const root, const int * const pArray, const size_t index,
-                                 const size_t length)
+inline static void treeFromArray(
+    TreeNode_t **const root, const int *const pArray, const size_t index, const size_t length)
 {
   if (index > length - 1) {
     return;
@@ -61,8 +61,8 @@ inline static void treeFromArray(TreeNode_t ** const root, const int * const pAr
   treeFromArray(&(*root)->right, pArray, index * 2 + 2, length);
 }
 
-inline static void arrayFromTreeLevel(int * const pArray, TreeNode_t * const root, size_t * const index,
-                                      const size_t level)
+inline static void arrayFromTreeLevel(
+    int *const pArray, TreeNode_t *const root, size_t *const index, const size_t level)
 {
   if (!root) {
     return;
@@ -90,7 +90,7 @@ inline static void arrayFromTreeLevel(int * const pArray, TreeNode_t * const roo
   arrayFromTreeLevel(pArray, root->right, index, level - 1);
 }
 
-inline static void arrayFromTree(int * const pArray, TreeNode_t * const root, size_t index)
+inline static void arrayFromTree(int *const pArray, TreeNode_t *const root, size_t index)
 {
   int deep = 0;
 

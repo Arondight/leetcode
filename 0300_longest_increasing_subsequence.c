@@ -9,7 +9,7 @@
 
 // @lc code=start
 
-int lengthOfLIS(const int * const nums, const int numsSize)
+int lengthOfLIS(const int *const nums, const int numsSize)
 {
   int *dp = NULL;
   int res = 1;

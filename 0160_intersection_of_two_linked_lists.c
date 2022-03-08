@@ -15,9 +15,9 @@
  * };
  */
 
-struct ListNode * getIntersectionNode(struct ListNode * headA, struct ListNode * headB)
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB)
 {
-  struct ListNode * p1 = headA, * p2 = headB;
+  struct ListNode *p1 = headA, *p2 = headB;
 
   while (p1 != p2) {
     p1 = p1 ? p1->next : headB;

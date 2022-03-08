@@ -1,16 +1,16 @@
+#include "test_assert.h"
+#include "tree.h"
 #include <stdbool.h>
 #include <string.h>
-#include "tree.h"
-#include "test_assert.h"
 
-extern void flatten(struct TreeNode * root);
+extern void flatten(struct TreeNode *root);
 
 bool testFlatten(void)
 {
   const int a[] = { 1, 2, 5, 3, 4, 0, 6 };
   const int expect[] = { 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6 };
-  struct TreeNode * root = NULL;
-  int * result = (int *)malloc(sizeof(expect));
+  struct TreeNode *root = NULL;
+  int *result = (int *)malloc(sizeof(expect));
   bool retVal = true;
 
   memset(result, 0, sizeof(expect));

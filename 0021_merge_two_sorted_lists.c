@@ -15,11 +15,11 @@
  * };
  */
 
-struct ListNode * mergeTwoLists(struct ListNode * list1, struct ListNode * list2)
+struct ListNode *mergeTwoLists(struct ListNode *list1, struct ListNode *list2)
 {
   struct ListNode dummpy = { 0, NULL };
-  struct ListNode * p = &dummpy;
-  struct ListNode * p1 = list1, * p2 = list2;
+  struct ListNode *p = &dummpy;
+  struct ListNode *p1 = list1, *p2 = list2;
 
   while (p1 && p2) {
     if (p1->val > p2->val) {

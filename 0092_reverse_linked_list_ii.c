@@ -15,7 +15,7 @@
  * };
  */
 
-struct ListNode * reverseBetween(struct ListNode * head, int left, int right)
+struct ListNode *reverseBetween(struct ListNode *head, int left, int right)
 {
   if (1 == left) {
     return reverseListFirstN(head, right);

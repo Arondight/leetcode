@@ -4,8 +4,8 @@
  * [114] 二叉树展开为链表
  */
 
-#include <stdio.h>
 #include "tree.h"
+#include <stdio.h>
 
 // @lc code=start
 /**
@@ -17,9 +17,9 @@
  * };
  */
 
-void flatten(struct TreeNode * root)
+void flatten(struct TreeNode *root)
 {
-  struct TreeNode * left = NULL, * right = NULL, * p = NULL;
+  struct TreeNode *left = NULL, *right = NULL, *p = NULL;
 
   if (!root) {
     return;
@@ -33,7 +33,8 @@ void flatten(struct TreeNode * root)
   root->left = NULL;
   root->right = left;
 
-  for (p = root; p->right; p = p->right);
+  for (p = root; p->right; p = p->right)
+    ;
   p->right = right;
 }
 

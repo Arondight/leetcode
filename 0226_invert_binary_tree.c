@@ -4,8 +4,8 @@
  * [226] 翻转二叉树
  */
 
-#include <stdio.h>
 #include "tree.h"
+#include <stdio.h>
 
 // @lc code=start
 /**
@@ -17,9 +17,9 @@
  * };
  */
 
-struct TreeNode * invertTree(struct TreeNode * root)
+struct TreeNode *invertTree(struct TreeNode *root)
 {
-  struct TreeNode * temp = NULL;
+  struct TreeNode *temp = NULL;
 
   if (!root) {
     return NULL;
