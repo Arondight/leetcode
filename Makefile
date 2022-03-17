@@ -24,8 +24,8 @@ include $(SOURCES:%.c=%.d) $(TESTS:%.c=%.d) $(TEST_C:%.c=%.d)
 
 
 $(TEST): $(SOURCES:%.c=%.o) $(TESTS:%.c=%.o) $(TEST_C:%.c=%.o)
-	for file in $^; do \
-		ar -rcs $(TEST_C:%.c=%.a) "$$file"; \
+	@for file in $^; do \
+		(set -x; ar -rcs $(TEST_C:%.c=%.a) "$$file"); \
 	done;
 
 	$(CC) ${CFLAGS} -o $(TEST_C:%.c=%) $(TEST_C:%.c=%.a)
@@ -53,6 +53,6 @@ clean:
 
 .PHONY: format
 format:
-	for file in $(SOURCES) $(TESTS) $(TEST_C) $(UTILS); do \
-		${FORMATTER} --style file -i "$$file"; \
+	@for file in $(SOURCES) $(TESTS) $(TEST_C) $(UTILS); do \
+		(set -x; ${FORMATTER} --style file -i "$$file"); \
 	done
